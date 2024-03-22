@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Javascript DOM</title>
+</head>
+
+<body>
+    <section id="formSection">
+        <form action="" id="formProfile">
+            <h1>Profile Data</h1>
+            <div>
+                <label for="first_name" style="margin-bottom: 10px;">First Name:</label>
+                <input type="text" id="first_name" placeholder="Insert First Name">
+            </div>
+            <div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" placeholder="Insert Last Name">
+            </div>
+            <div>
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" placeholder="Insert Phone Number">
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="Insert Address"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button id="myButton">Submit</button>
+            </div>
+        </form>
+    </section>
+    <section id="listSection">
+        <h1>List Item</h1>
+        <ol type="1">
+            <li>First Item</li>
+            <li>Second Item</li>
+        </ol>
+        <div style="text-align: center;">
+            <button id="myButtonList">Tambah</button>
+        </div>
+    </section>
+    <script>
+        // Manipulasi style, attribute, class, dan event handling dari FORM PROFILE DATA
+        var formSection = document.getElementById("formSection");
+        formSection.style.width = "30%";
+        formSection.style.margin = "auto";
+        formSection.style.marginTop = "30px";
+        formSection.style.padding = "20px";
+        formSection.style.border = "2px solid black";
+        formSection.style.borderRadius = "5px";
+        formSection.style.fontFamily = "Arial";
+
+        var formProfile = document.getElementById("formProfile");
+
+        var h1Element = formProfile.querySelector("h1");
+        h1Element.style.textAlign = "center";
+        h1Element.style.fontWeight = "bold";
+        h1Element.style.margin = "3px";
+
+        var formElements = formProfile.querySelectorAll("label, input, textarea");
+        formElements.forEach(function (element) {
+            element.style.width = "100%";
+            element.style.marginBottom = "10px";
+        });
+
+        var button = formProfile.querySelector("button");
+        button.style.width = "auto";
+        button.style.padding = "5px 20px";
+        button.style.backgroundColor = "darkgreen";
+        button.style.color = "white";
+        button.style.border = "2px solid black";
+        button.style.borderRadius = "5px";
+
+        formProfile.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var firstName = document.getElementById("first_name").value;
+            var lastName = document.getElementById("last_name").value;
+            var phoneNumber = document.getElementById("phone_number").value;
+            var address = document.getElementById("address").value;
+
+            var dataProfile = {
+                first_name: firstName,
+                last_name: lastName,
+                phone_number: phoneNumber,
+                address: address
+            };
+            console.log(dataProfile);
+        });
+
+        // Manipulasi style, attribute, class, dan event handling dari LIST
+        var listSection = document.getElementById("listSection");
+        listSection.style.width = "30%";
+        listSection.style.margin = "auto";
+        listSection.style.marginTop = "30px";
+        listSection.style.padding = "20px";
+        listSection.style.border = "2px solid black";
+        listSection.style.borderRadius = "5px";
+        listSection.style.fontFamily = "Arial";
+
+        var button = listSection.querySelector("button");
+        button.style.width = "100%";
+        button.style.padding = "5px 20px";
+        button.style.backgroundColor = "darkblue";
+        button.style.color = "white";
+        button.style.border = "2px solid black";
+        button.style.borderRadius = "5px";
+
+        function tambahNodeBaru() {
+            var ol = document.querySelector("#listSection ol");
+            var li = document.createElement("li");
+            li.textContent = "Extra Item";
+            ol.appendChild(li);
+        }
+
+        var buttonList = document.getElementById("myButtonList");
+        buttonList.addEventListener("click", function () {
+            tambahNodeBaru();
+        });
+    </script>
+</body>
+
+</html>

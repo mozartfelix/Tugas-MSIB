@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="navbar__logo">E-Toko</h1>
+        <nav class="navbar__nav-items">
+            <a href="home.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div id="show" class="navbar__button">
+            <button class="navbar__button-register"><a href="#">Register</a></button>
+            <button class="navbar__button-login"><a href="#">Login</a></button>
+        </div>
+        <div id="username-display" style="display: none;">
+            <button id="username-value"></button>
+            <div id="logout-toggle">
+                <button class="navbar__button-logout"><a href="#">Logout</a></button>
+            </div>
+        </div>
+    </header>
+    <form id="form-login" action="">
+        <h1 id="tittle">Login Data</h1>
+        <div>
+            <Label for="username">Username:</Label>
+            <input id="username" type="text" placeholder="Insert Username">
+        </div>
+        <div>
+            <Label for="password">Password:</Label>
+            <input id="password" type="password" placeholder="Insert Password">
+        </div>
+        <div style="text-align: center;">
+            <button id="button-login" type="button">Login</button>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Fungsi untuk menampilkan tombol Register dan Login serta menyembunyikan tombol Logout dan username
+        function showLoginButtons() {
+            $("#show").show();
+            $("#username-display").hide();
+        }
+
+        // Fungsi untuk menampilkan username dan tombol Logout serta menyembunyikan tombol Register dan Login
+        function showUsername(username) {
+            $("#username-value").text(username);
+            $("#show").hide();
+            $("#username-display").show();
+        }
+
+        // Cek apakah ada username di localStorage saat halaman dimuat
+        $(document).ready(function () {
+            if (localStorage.getItem("user")) {
+                var username = localStorage.getItem("user");
+                showUsername(username);
+            } else {
+                showLoginButtons();
+            }
+        });
+
+        // Event listener untuk tombol Login
+        $("#button-login").click(function () {
+            var userValue = $("#username").val();
+            localStorage.setItem("user", userValue);
+            showUsername(userValue);
+        });
+
+        // Event listener untuk tombol Logout
+        $("#logout-toggle").click(function () {
+            localStorage.removeItem("user");
+            showLoginButtons();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas CSS-2 Mozart Felix</title>
+    <link rel="stylesheet" href="style.css"> <!-- baris ini untuk import file eksternal CSS -->
+    <!-- baris yang dibungkus element <style> di bawah ini merupakan file internal CSS -->
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        span {
+            color: red;
+        }
+
+        .konten {
+            height: 300px;
+            overflow: scroll;
+        }
+
+        .card {
+            width: 200px;
+            border: 3px solid #c4c6c0;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0px 0px 10px 15px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .nama-menu {
+            height: 5px;
+        }
+
+        p {
+            height: 30px;
+        }
+
+        #keterangan {
+            height: 45px;
+        }
+
+        button {
+            background-color: #07a03f;
+            color: white;
+            min-width: 200px;
+            border-style: hidden;
+            border-radius: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Selamat Datang Di Toko Online <span>Nusantara</span></h2>
+    </header>
+    <main>
+        <section>
+            <h3>Daftar Makanan</h3>
+            <div class="konten">
+                <div class="card">
+                    <img src="bakso.jpg" alt="bakso">
+                    <h4 class="nama-menu">Bakso Malang Pak Eren</h4>
+                    <p>Enak bikin kenyang murah meriah mantap</p>
+                    <h4 class="harga">Rp 50.000</h4>
+                    <button type="submit">Beli</button>
+                </div>
+                <div class="card">
+                    <img src="ikan bakar.jpg" alt="ikan bakar.jpg">
+                    <h4 class="nama-menu">Ikan Bakar Pak Mahmud</h4>
+                    <p>Ikan bakar rasanya gurih bisa untuk dimakan bersama</p>
+                    <h4 class="harga">Rp 50.000</h4>
+                    <button type="submit">Beli</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Daftar Minuman</h3>
+            <div class="konten">
+                <div class="card">
+                    <img src="cendol.jpg" alt="cendol">
+                    <h4 class="nama-menu">Cendol Dawet Jirolu</h4>
+                    <p>Cendol segar mengandung bahan alami</p>
+                    <h4 class="harga">Rp 50.000</h4>
+                    <button type="submit">Beli</button>
+                </div>
+                <div class="card">
+                    <img src="sekuteng.jpg" alt="sekuteng">
+                    <h4 class="nama-menu">Sekuteng Hangat</h4>
+                    <p id="keterangan">Sekuteng hangat yang bisa menghangatkan baik untuk tubuh</p>
+                    <h4 class="harga">Rp 50.000</h4>
+                    <button type="submit">Beli</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
