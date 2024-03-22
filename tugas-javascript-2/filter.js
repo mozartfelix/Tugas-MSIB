@@ -8,43 +8,47 @@
 
 var reports = [
   {
-    name: "Farhan",
+    name: 'Farhan',
     score: 75,
   },
   {
-    name: "Akbar",
+    name: 'Akbar',
     score: 80,
   },
   {
-    name: "Hanif",
+    name: 'Hanif',
     score: 60,
   },
   {
-    name: "Rudi",
+    name: 'Rudi',
     score: 40,
   },
   {
-    name: "Ajam",
+    name: 'Ajam',
     score: 70,
   },
   {
-    name: "Hafiz",
+    name: 'Hafiz',
     score: 30,
   },
   {
-    name: "Adin",
+    name: 'Adin',
     score: 90,
   },
   {
-    name: "Daffa",
+    name: 'Daffa',
     score: 25,
   },
   {
-    name: "Ridho",
+    name: 'Ridho',
     score: 55,
   },
   {
-    name: "Faris",
+    name: 'Faris',
     score: 70,
   },
 ];
+
+var lulus = reports.filter((siswa) => siswa.score >= 70);
+
+console.log('Data siswa yang lulus:', lulus);
