@@ -6,3 +6,19 @@
     4. Tampilkan hasil filter tersebut pada terminal
     tips: caranya mirip seperti yang ada di materi, namun dengan tambahan filter
 */
+
+const getData = async () => {
+  try {
+    const response = await fetch('https://api.amandemy.co.id/api/tugas', {
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+    const result = await response.json();
+    console.log(result.filter((menu) => menu.harga >= 15000));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getData();
