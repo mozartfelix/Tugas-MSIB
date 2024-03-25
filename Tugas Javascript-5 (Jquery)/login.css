@@ -60,6 +60,14 @@ body {
   border-radius: 8px;
 }
 
+.main-section {
+  padding: 10px 20px;
+}
+
+.main-section .title {
+  font-size: 30px;
+}
+
 .profile {
   display: none;
   position: relative;
@@ -83,7 +91,7 @@ body {
   top: 35px;
 }
 
-.menu-profile button {
+.profile-logout button {
   color: red;
   font-weight: bold;
   padding: 5px 30px;
@@ -91,7 +99,7 @@ body {
   border: none;
 }
 
-.menu-profile button:hover {
+.profile-logout button:hover {
   color: white;
   font-weight: bold;
   background-color: #ff00008f;

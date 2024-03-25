@@ -38,11 +38,11 @@
             <h1 class="form-tittle">Login Data</h1>
             <div class="input-wrapper">
                 <Label for="username">Username:</Label>
-                <input type="text" placeholder="Insert Username">
+                <input id="username" type="text" placeholder="Insert Username">
             </div>
             <div class="input-wrapper">
                 <Label for="password">Password:</Label>
-                <input type="password" placeholder="Insert Password">
+                <input id="password" type="password" placeholder="Insert Password">
             </div>
             <button id="login" type="button">Login</button>
         </form>
@@ -51,7 +51,7 @@
     <script src="index.js"></script>
     <script>
         $("#login").on("click", () => {
-            const val = $("input[name='username']").val();
+            const val = $("#username").val();
             localStorage.setItem("username", val);
             userExist();
         });

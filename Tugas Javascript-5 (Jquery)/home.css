@@ -87,7 +87,7 @@ main {
   top: 35px;
 }
 
-.menu-profile button {
+.profile-logout button {
   color: red;
   font-weight: bold;
   padding: 5px 30px;
@@ -95,7 +95,7 @@ main {
   border: none;
 }
 
-.menu-profile button:hover {
+.profile-logout button:hover {
   color: white;
   font-weight: bold;
   background-color: #ff00008f;
