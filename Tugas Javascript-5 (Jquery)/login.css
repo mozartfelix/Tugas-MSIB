@@ -28,114 +28,118 @@ body {
   gap: 15px;
 }
 
-.navbar__nav-items a,
-.navbar__button-register a,
-.navbar__button-login a {
+.navbar__nav-items a {
   text-decoration: none;
   color: white;
   font-size: 20px;
 }
 
-.navbar__button-register {
-  background-color: #0d9276;
-  border: unset;
-  padding: 5px 0px;
-  margin-left: 2px;
+.navbar__button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.navbar__button-login {
-  background-color: #0d9276;
-  border: unset;
-  padding: 5px 0px;
-  margin-left: 2px;
-}
-
-.navbar__button-register a {
+.navbar__button .navbar__button-register {
   background-color: white;
   color: #0d9276;
   font-weight: bold;
+  font-size: 20px;
   padding: 10px 25px;
   border-radius: 8px;
   border: 2px solid #0d9276;
 }
 
-.navbar__button-login a {
+.navbar__button .navbar__button-login {
   background-color: #0d9276;
   color: white;
   font-weight: bold;
+  font-size: 20px;
   padding: 10px 25px;
   border: 2px solid white;
   border-radius: 8px;
-  margin-left: 10px;
 }
 
-#form-login {
-  width: 26%;
-  margin: auto;
-  margin-top: 30px;
-  padding: 20px;
-  padding-top: 0px;
-  border: 2px solid black;
-  border-radius: 8px;
-}
-
-#tittle {
-  text-align: center;
-  font-weight: bold;
-}
-
-#username,
-#password {
-  width: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-#button-login {
-  width: auto;
-  padding: 5px 20px;
-  background-color: #0d9276;
-  color: white;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-#username-display {
+.profile {
+  display: none;
   position: relative;
 }
 
-#username-value {
+#profile-username {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  border: none;
+  font-weight: bold;
+}
+
+.profile-logout {
+  position: absolute;
+  padding: 10px 0px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  transform: translate(-50%, 0%);
+  top: 35px;
+}
+
+.menu-profile button {
+  color: red;
+  font-weight: bold;
+  padding: 5px 30px;
+  background-color: unset;
+  border: none;
+}
+
+.menu-profile button:hover {
+  color: white;
+  font-weight: bold;
+  background-color: #ff00008f;
+  cursor: pointer;
+}
+
+.form-login {
+  max-width: 26%;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-tittle {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 7px;
+}
+
+.input-wrapper label {
+  font-size: 16px;
+}
+
+.input-wrapper input {
+  font-size: 16px;
+}
+
+.form-login button {
+  border: 2px solid black;
+  border-radius: 5px;
   background-color: #0d9276;
   color: white;
-  font-size: 20px;
-  font-weight: bold;
-  border: unset;
+  padding: 5px 20px;
+  font-size: 15px;
 }
 
-.navbar__button-logout a {
-  text-decoration: none;
-  background-color: red;
-  color: white;
-  font-weight: bold;
-  padding: 3px 10px;
-}
-
-#logout-toggle {
-  position: absolute;
-  top: 28px;
-  right: 0px;
-  background-color: white;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: none;
-}
-
-#username-display:hover #logout-toggle {
-  display: block;
-}
-
-@media (max-width: 950px) {
+@media (width <= 950px) {
   .catalog {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -145,13 +149,13 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .catalog {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .catalog {
     grid-template-columns: repeat(1, 1fr);
   }

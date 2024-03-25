@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Transaksi</title>
     <link rel="stylesheet" href="transaksi.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,14 +19,16 @@
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
-        <div id="show" class="navbar__button">
-            <button class="navbar__button-register"><a href="#">Register</a></button>
-            <button class="navbar__button-login"><a href="login.html">Login</a></button>
+        <div class="navbar__button">
+            <button class="navbar__button-register">Register</button>
+            <a href="login.html">
+                <button class="navbar__button-login">Login</button>
+            </a>
         </div>
-        <div id="username-display" style="display: none;">
-            <button id="username-value"></button>
-            <div id="logout-toggle">
-                <button class="navbar__button-logout"><a href="#">Logout</a></button>
+        <div class="profile">
+            <button id="profile-username"></button>
+            <div class="profile-logout">
+                <button>Logout</button>
             </div>
         </div>
     </header>
@@ -121,44 +125,7 @@
             </section>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // Fungsi untuk menampilkan tombol Register dan Login serta menyembunyikan tombol Logout dan username
-        function showLoginButtons() {
-            $("#show").show();
-            $("#username-display").hide();
-        }
-
-        // Fungsi untuk menampilkan username dan tombol Logout serta menyembunyikan tombol Register dan Login
-        function showUsername(username) {
-            $("#username-value").text(username);
-            $("#show").hide();
-            $("#username-display").show();
-        }
-
-        // Cek apakah ada username di localStorage saat halaman dimuat
-        $(document).ready(function () {
-            if (localStorage.getItem("user")) {
-                var username = localStorage.getItem("user");
-                showUsername(username);
-            } else {
-                showLoginButtons();
-            }
-        });
-
-        // Event listener untuk tombol Login
-        $("#button-login").click(function () {
-            var userValue = $("#username").val();
-            localStorage.setItem("user", userValue);
-            showUsername(userValue);
-        });
-
-        // Event listener untuk tombol Logout
-        $("#logout-toggle").click(function () {
-            localStorage.removeItem("user");
-            showLoginButtons();
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

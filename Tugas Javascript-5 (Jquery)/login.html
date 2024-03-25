@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
     <link rel="stylesheet" href="login.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,67 +19,41 @@
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
-        <div id="show" class="navbar__button">
-            <button class="navbar__button-register"><a href="#">Register</a></button>
-            <button class="navbar__button-login"><a href="#">Login</a></button>
+        <div class="navbar__button">
+            <button class="navbar__button-register">Register</button>
+            <a href="login.html">
+                <button class="navbar__button-login">Login</button>
+            </a>
         </div>
-        <div id="username-display" style="display: none;">
-            <button id="username-value"></button>
-            <div id="logout-toggle">
-                <button class="navbar__button-logout"><a href="#">Logout</a></button>
+        <div class="profile">
+            <button id="profile-username"></button>
+            <div class="profile-logout">
+                <button>Logout</button>
             </div>
         </div>
     </header>
-    <form id="form-login" action="">
-        <h1 id="tittle">Login Data</h1>
-        <div>
-            <Label for="username">Username:</Label>
-            <input id="username" type="text" placeholder="Insert Username">
-        </div>
-        <div>
-            <Label for="password">Password:</Label>
-            <input id="password" type="password" placeholder="Insert Password">
-        </div>
-        <div style="text-align: center;">
-            <button id="button-login" type="button">Login</button>
-        </div>
-    </form>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <main>
+        <form class="form-login" action="">
+            <h1 class="form-tittle">Login Data</h1>
+            <div class="input-wrapper">
+                <Label for="username">Username:</Label>
+                <input type="text" placeholder="Insert Username">
+            </div>
+            <div class="input-wrapper">
+                <Label for="password">Password:</Label>
+                <input type="password" placeholder="Insert Password">
+            </div>
+            <button id="login" type="button">Login</button>
+        </form>
+    </main>
+
+    <script src="index.js"></script>
     <script>
-        // Fungsi untuk menampilkan tombol Register dan Login serta menyembunyikan tombol Logout dan username
-        function showLoginButtons() {
-            $("#show").show();
-            $("#username-display").hide();
-        }
-
-        // Fungsi untuk menampilkan username dan tombol Logout serta menyembunyikan tombol Register dan Login
-        function showUsername(username) {
-            $("#username-value").text(username);
-            $("#show").hide();
-            $("#username-display").show();
-        }
-
-        // Cek apakah ada username di localStorage saat halaman dimuat
-        $(document).ready(function () {
-            if (localStorage.getItem("user")) {
-                var username = localStorage.getItem("user");
-                showUsername(username);
-            } else {
-                showLoginButtons();
-            }
-        });
-
-        // Event listener untuk tombol Login
-        $("#button-login").click(function () {
-            var userValue = $("#username").val();
-            localStorage.setItem("user", userValue);
-            showUsername(userValue);
-        });
-
-        // Event listener untuk tombol Logout
-        $("#logout-toggle").click(function () {
-            localStorage.removeItem("user");
-            showLoginButtons();
+        $("#login").on("click", () => {
+            const val = $("input[name='username']").val();
+            localStorage.setItem("username", val);
+            userExist();
         });
     </script>
 </body>

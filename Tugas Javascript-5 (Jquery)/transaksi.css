@@ -32,45 +32,74 @@ main {
   gap: 15px;
 }
 
-.navbar__nav-items a,
-.navbar__button-register a,
-.navbar__button-login a {
+.navbar__nav-items a {
   text-decoration: none;
   color: white;
   font-size: 20px;
 }
 
-.navbar__button-register {
-  background-color: #0d9276;
-  border: unset;
-  padding: 5px 0px;
-  margin-left: 2px;
+.navbar__button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.navbar__button-login {
-  background-color: #0d9276;
-  border: unset;
-  padding: 5px 0px;
-  margin-left: 2px;
-}
-
-.navbar__button-register a {
+.navbar__button .navbar__button-register {
   background-color: white;
   color: #0d9276;
   font-weight: bold;
+  font-size: 20px;
   padding: 10px 25px;
   border-radius: 8px;
   border: 2px solid #0d9276;
 }
 
-.navbar__button-login a {
+.navbar__button .navbar__button-login {
   background-color: #0d9276;
   color: white;
   font-weight: bold;
+  font-size: 20px;
   padding: 10px 25px;
   border: 2px solid white;
   border-radius: 8px;
-  margin-left: 10px;
+}
+
+.profile {
+  display: none;
+  position: relative;
+}
+
+#profile-username {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  border: none;
+  font-weight: bold;
+}
+
+.profile-logout {
+  position: absolute;
+  padding: 10px 0px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  transform: translate(-50%, 0%);
+  top: 35px;
+}
+
+.menu-profile button {
+  color: red;
+  font-weight: bold;
+  padding: 5px 30px;
+  background-color: unset;
+  border: none;
+}
+
+.menu-profile button:hover {
+  color: white;
+  font-weight: bold;
+  background-color: #ff00008f;
+  cursor: pointer;
 }
 
 .title {
@@ -135,6 +164,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding: 0px 30px;
 }
 
 .section-2 {
@@ -175,42 +205,7 @@ main {
   margin-top: 25px;
 }
 
-#username-display {
-  position: relative;
-}
-
-#username-value {
-  background-color: #0d9276;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  border: unset;
-}
-
-.navbar__button-logout a {
-  text-decoration: none;
-  background-color: red;
-  color: white;
-  font-weight: bold;
-  padding: 3px 10px;
-}
-
-#logout-toggle {
-  position: absolute;
-  top: 28px;
-  right: 0px;
-  background-color: white;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: none;
-}
-
-#username-display:hover #logout-toggle {
-  display: block;
-}
-
-@media (width <=950px) {
+@media (width <= 950px) {
   .section-1 {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -220,18 +215,21 @@ main {
   }
 }
 
-@media (width <=700px) {
+@media (width <= 700px) {
   .section-1 {
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
+    width: auto;
+    padding: 0px;
   }
 
   .section-2 {
-    width: 93%;
+    width: auto;
+    margin: 30px 0px;
   }
 
   .content {
     flex-direction: column;
+    padding: 0px 20px;
   }
 
   .navbar__logo {
@@ -239,12 +237,10 @@ main {
   }
 }
 
-@media (width <=500px) {
+@media (width <= 500px) {
   .section-1 {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .section-2 {
-    width: 90%;
+    width: auto;
+    padding: 0px;
   }
 }
